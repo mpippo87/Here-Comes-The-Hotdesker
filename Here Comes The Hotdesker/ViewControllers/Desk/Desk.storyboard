@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EuP-bE-c1s">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Desk View Controller-->
+        <scene sceneID="53F-l8-dLz">
+            <objects>
+                <viewController storyboardIdentifier="DeskViewController" id="EuP-bE-c1s" customClass="DeskViewController" customModule="Here_Comes_The_Hotdesker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dgU-jm-bHo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZCh-eg-r6F">
+                                <rect key="frame" x="25" y="128.5" width="364" height="639.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epz-W5-GNL">
+                                        <rect key="frame" x="20" y="0.0" width="324" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="64D-IV-Rio">
+                                        <rect key="frame" x="0.0" y="38.5" width="364" height="601"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTy-2f-udZ">
+                                                <rect key="frame" x="140" y="0.0" width="84" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-sS-pO8">
+                                                        <rect key="frame" x="19.5" y="0.0" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="45" id="0EW-Mb-WXI"/>
+                                                            <constraint firstAttribute="height" constant="45" id="NuJ-OS-ixu"/>
+                                                        </constraints>
+                                                        <state key="normal" image="image_chair_free_top"/>
+                                                        <connections>
+                                                            <action selector="actionButtonChair_1:" destination="EuP-bE-c1s" eventType="touchUpInside" id="VAu-hE-E3M"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ZzG-sS-pO8" firstAttribute="centerX" secondItem="NTy-2f-udZ" secondAttribute="centerX" id="7hV-pv-3Ao"/>
+                                                    <constraint firstAttribute="height" constant="45" id="nos-gb-GOs"/>
+                                                    <constraint firstItem="ZzG-sS-pO8" firstAttribute="centerY" secondItem="NTy-2f-udZ" secondAttribute="centerY" id="vIa-yN-c6P"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="lTH-Dp-PS5">
+                                                <rect key="frame" x="0.0" y="53" width="364" height="495"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="EoC-Hc-1FH">
+                                                        <rect key="frame" x="0.0" y="16.5" width="45" height="462"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW6-Xi-mGs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="45" id="TCX-s7-fUW"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="XLo-zK-MI5"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_left"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_10:" destination="EuP-bE-c1s" eventType="touchUpInside" id="DNP-7j-EbQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQs-5s-4Yv">
+                                                                <rect key="frame" x="0.0" y="139" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="Dll-U1-Bxc"/>
+                                                                    <constraint firstAttribute="width" constant="45" id="nnj-4V-Buf"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_left"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_9:" destination="EuP-bE-c1s" eventType="touchUpInside" id="SPs-Cu-kLn"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot2-fp-IhD">
+                                                                <rect key="frame" x="0.0" y="278" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="2Wt-mS-bly"/>
+                                                                    <constraint firstAttribute="width" constant="45" id="FZD-sF-yyZ"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_left"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_8:" destination="EuP-bE-c1s" eventType="touchUpInside" id="E5B-TH-oe8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUn-hT-7Th">
+                                                                <rect key="frame" x="0.0" y="417" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="45" id="7BJ-Uc-v3P"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="fhA-9m-vgw"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_left"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_7:" destination="EuP-bE-c1s" eventType="touchUpInside" id="gAA-h8-qlT"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_table" translatesAutoresizingMaskIntoConstraints="NO" id="laQ-zm-B9a">
+                                                        <rect key="frame" x="73" y="0.0" width="218" height="495"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="laQ-zm-B9a" secondAttribute="height" multiplier="218:495" id="8wq-Xz-EIU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="Zte-Mk-x9K">
+                                                        <rect key="frame" x="319" y="15" width="45" height="465"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcJ-VF-FEf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="9Gb-Ny-W9D"/>
+                                                                    <constraint firstAttribute="width" constant="45" id="gNx-DX-f0f"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_right"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_2:" destination="EuP-bE-c1s" eventType="touchUpInside" id="G3B-WO-T18"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiK-dW-Uwy">
+                                                                <rect key="frame" x="0.0" y="140" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="45" id="aag-0i-Vo8"/>
+                                                                    <constraint firstAttribute="width" constant="45" id="iRR-x0-LSG"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_right"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_3:" destination="EuP-bE-c1s" eventType="touchUpInside" id="32d-cf-Ad2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX1-T0-NlN">
+                                                                <rect key="frame" x="0.0" y="280" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="45" id="XPD-x0-YLp"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="hAX-aJ-K3g"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_right"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_4:" destination="EuP-bE-c1s" eventType="touchUpInside" id="Sua-Zg-sMz"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xl-bU-2e3">
+                                                                <rect key="frame" x="0.0" y="420" width="45" height="45"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="45" id="feM-fK-elw"/>
+                                                                    <constraint firstAttribute="height" constant="45" id="ncU-ay-dB8"/>
+                                                                </constraints>
+                                                                <state key="normal" image="image_chair_free_right"/>
+                                                                <connections>
+                                                                    <action selector="actionButtonChair_5:" destination="EuP-bE-c1s" eventType="touchUpInside" id="LHm-pw-kq2"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Zte-Mk-x9K" secondAttribute="bottom" constant="15" id="025-DK-qf4"/>
+                                                    <constraint firstItem="Zte-Mk-x9K" firstAttribute="top" secondItem="lTH-Dp-PS5" secondAttribute="top" constant="15" id="E3z-iT-E5Z"/>
+                                                    <constraint firstItem="EoC-Hc-1FH" firstAttribute="top" secondItem="lTH-Dp-PS5" secondAttribute="top" constant="16.5" id="HI8-vQ-dbC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EoC-Hc-1FH" secondAttribute="bottom" constant="16.5" id="HVl-kC-HMA"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TST-ja-0px">
+                                                <rect key="frame" x="140" y="556" width="84" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1S-b1-nWp">
+                                                        <rect key="frame" x="19.5" y="0.0" width="45" height="45"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="45" id="8PL-2l-Pny"/>
+                                                            <constraint firstAttribute="width" constant="45" id="rKd-qB-x3s"/>
+                                                        </constraints>
+                                                        <state key="normal" image="image_chair_free_bottom"/>
+                                                        <connections>
+                                                            <action selector="actionButtonChair_6:" destination="EuP-bE-c1s" eventType="touchUpInside" id="Mcs-DE-xnG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="d1S-b1-nWp" firstAttribute="centerY" secondItem="TST-ja-0px" secondAttribute="centerY" id="0fx-Jt-HdE"/>
+                                                    <constraint firstItem="d1S-b1-nWp" firstAttribute="centerX" secondItem="TST-ja-0px" secondAttribute="centerX" id="VfH-O7-RjV"/>
+                                                    <constraint firstAttribute="height" constant="45" id="dg8-n2-42H"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Epz-W5-GNL" secondAttribute="trailing" constant="20" id="3B6-Bj-SB8"/>
+                                    <constraint firstItem="Epz-W5-GNL" firstAttribute="leading" secondItem="ZCh-eg-r6F" secondAttribute="leading" constant="20" id="aF1-K0-Qi2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZCh-eg-r6F" firstAttribute="centerX" secondItem="dgU-jm-bHo" secondAttribute="centerX" id="p7o-7q-K82"/>
+                            <constraint firstItem="ZCh-eg-r6F" firstAttribute="centerY" secondItem="dgU-jm-bHo" secondAttribute="centerY" id="v81-xD-Qkk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N3H-jM-bLI"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonChair_1" destination="ZzG-sS-pO8" id="rNf-0U-5F8"/>
+                        <outlet property="buttonChair_10" destination="QW6-Xi-mGs" id="Jd3-R1-3sf"/>
+                        <outlet property="buttonChair_2" destination="FcJ-VF-FEf" id="5r0-jM-fmR"/>
+                        <outlet property="buttonChair_3" destination="HiK-dW-Uwy" id="5A3-cc-CM4"/>
+                        <outlet property="buttonChair_4" destination="uX1-T0-NlN" id="56V-Ko-vyK"/>
+                        <outlet property="buttonChair_5" destination="6Xl-bU-2e3" id="pVY-cO-V9c"/>
+                        <outlet property="buttonChair_6" destination="d1S-b1-nWp" id="vlB-7X-yAo"/>
+                        <outlet property="buttonChair_7" destination="RUn-hT-7Th" id="ANN-DX-bek"/>
+                        <outlet property="buttonChair_8" destination="ot2-fp-IhD" id="scv-Xt-tx1"/>
+                        <outlet property="buttonChair_9" destination="rQs-5s-4Yv" id="f2N-FG-ACE"/>
+                        <outlet property="labelSelect" destination="Epz-W5-GNL" id="GaO-fA-WAF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtb-dE-qq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image_chair_free_bottom" width="59" height="54"/>
+        <image name="image_chair_free_left" width="54" height="59"/>
+        <image name="image_chair_free_right" width="54" height="59"/>
+        <image name="image_chair_free_top" width="59" height="54"/>
+        <image name="image_table" width="218" height="495"/>
+    </resources>
+</document>

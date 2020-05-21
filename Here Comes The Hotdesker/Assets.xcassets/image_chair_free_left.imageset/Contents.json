@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "image_chair_free_left.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
