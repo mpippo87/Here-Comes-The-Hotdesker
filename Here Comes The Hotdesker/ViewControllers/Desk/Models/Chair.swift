@@ -81,4 +81,16 @@ struct Chair {
 	}
 	var user: User?
 	
+	// MARK: - Public Methods
+	
+	mutating func setFree() {
+		self.state = .free
+		self.user = nil
+	}
+	
+	mutating func setBusy(_ user: User) {
+		self.state = .busy
+		self.user = user
+	}
+	
 }

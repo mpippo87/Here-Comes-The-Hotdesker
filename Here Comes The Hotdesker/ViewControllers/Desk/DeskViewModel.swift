@@ -17,6 +17,7 @@ final class DeskViewModel {
 	
 	/// Current user
 	var user: User
+	var indexChair: Int?
 	
 	// MARK: - Init
 	
@@ -26,10 +27,22 @@ final class DeskViewModel {
 	
 	// MARK: - Public Methods
 	
-	func setChair(_ index: Int) -> Chair {
-		desk.chairs[index].state = (desk.chairs[index].state == .free) ? .busy : .free
-		print("set chair[\(index)]: \(desk.chairs[index])")
-		return desk.chairs[index]
+	func setChair(_ index: Int) -> [Chair] {
+		if (desk.chairs[index].state != .busy) {
+			
+			// TODO: Call Server
+			
+			if let currentIndex = indexChair {
+				desk.chairs[currentIndex].setFree()
+			}
+			desk.chairs[index].setBusy(user)
+			indexChair = index
+			
+		} else if (index == indexChair) {
+			desk.chairs[index].setFree()
+		}
+		
+		return desk.chairs
 	}
 	
 }
