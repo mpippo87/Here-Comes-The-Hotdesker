@@ -11,6 +11,12 @@
 		A5B926B62477D801009D95F7 /* Chair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926B52477D801009D95F7 /* Chair.swift */; };
 		A5B926B92477D88C009D95F7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926B82477D88C009D95F7 /* User.swift */; };
 		A5B926BB2477DAE3009D95F7 /* Desk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926BA2477DAE3009D95F7 /* Desk.swift */; };
+		A5B926BD2478324C009D95F7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926BC2478324C009D95F7 /* Network.swift */; };
+		A5B926C224783311009D95F7 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926C124783310009D95F7 /* Client.swift */; };
+		A5B926C42478331A009D95F7 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926C32478331A009D95F7 /* Target.swift */; };
+		A5B926C824783365009D95F7 /* HTTPParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926C524783365009D95F7 /* HTTPParameterEncoding.swift */; };
+		A5B926C924783365009D95F7 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926C624783365009D95F7 /* HTTPStatusCode.swift */; };
+		A5B926CA24783365009D95F7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B926C724783365009D95F7 /* HTTPMethod.swift */; };
 		A5C91F012476D6AB00A991B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C91F002476D6AB00A991B0 /* AppDelegate.swift */; };
 		A5C91F032476D6AB00A991B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C91F022476D6AB00A991B0 /* SceneDelegate.swift */; };
 		A5C91F062476D6AB00A991B0 /* Here_Comes_The_Hotdesker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5C91F042476D6AB00A991B0 /* Here_Comes_The_Hotdesker.xcdatamodeld */; };
@@ -52,6 +58,12 @@
 		A5B926B52477D801009D95F7 /* Chair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chair.swift; sourceTree = "<group>"; };
 		A5B926B82477D88C009D95F7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A5B926BA2477DAE3009D95F7 /* Desk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk.swift; sourceTree = "<group>"; };
+		A5B926BC2478324C009D95F7 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A5B926C124783310009D95F7 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		A5B926C32478331A009D95F7 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		A5B926C524783365009D95F7 /* HTTPParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPParameterEncoding.swift; sourceTree = "<group>"; };
+		A5B926C624783365009D95F7 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		A5B926C724783365009D95F7 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		A5C91EFD2476D6AB00A991B0 /* Here Comes The Hotdesker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Here Comes The Hotdesker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C91F002476D6AB00A991B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5C91F022476D6AB00A991B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +124,35 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A5B926BF2478325C009D95F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5C91F4C2476FBB700A991B0 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5B926C024783268009D95F7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A5B926CB24783374009D95F7 /* HTTP */,
+				A5B926C124783310009D95F7 /* Client.swift */,
+				A5B926C32478331A009D95F7 /* Target.swift */,
+				A5B926BC2478324C009D95F7 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A5B926CB24783374009D95F7 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				A5B926C724783365009D95F7 /* HTTPMethod.swift */,
+				A5B926C524783365009D95F7 /* HTTPParameterEncoding.swift */,
+				A5B926C624783365009D95F7 /* HTTPStatusCode.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
 		A5C91EF42476D6AB00A991B0 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +176,8 @@
 		A5C91EFF2476D6AB00A991B0 /* Here Comes The Hotdesker */ = {
 			isa = PBXGroup;
 			children = (
+				A5B926BF2478325C009D95F7 /* Extensions */,
+				A5B926C024783268009D95F7 /* Network */,
 				A5C91F372476D8D200A991B0 /* ViewControllers */,
 				A5C91F412476DA5400A991B0 /* Coordinators */,
 				A5C91F002476D6AB00A991B0 /* AppDelegate.swift */,
@@ -142,7 +185,6 @@
 				A5C91F112476D6AD00A991B0 /* Info.plist */,
 				A5C91F042476D6AB00A991B0 /* Here_Comes_The_Hotdesker.xcdatamodeld */,
 				A5C91F0B2476D6AD00A991B0 /* Preview Content */,
-				A5C91F4C2476FBB700A991B0 /* UIViewController+Ext.swift */,
 			);
 			path = "Here Comes The Hotdesker";
 			sourceTree = "<group>";
@@ -353,6 +395,10 @@
 				A5C91F4B2476EDD900A991B0 /* DeskViewModel.swift in Sources */,
 				A5B926BB2477DAE3009D95F7 /* Desk.swift in Sources */,
 				A5C91F4D2476FBB800A991B0 /* UIViewController+Ext.swift in Sources */,
+				A5B926BD2478324C009D95F7 /* Network.swift in Sources */,
+				A5B926C42478331A009D95F7 /* Target.swift in Sources */,
+				A5B926C224783311009D95F7 /* Client.swift in Sources */,
+				A5B926CA24783365009D95F7 /* HTTPMethod.swift in Sources */,
 				A5B926B42477D353009D95F7 /* Images.swift in Sources */,
 				A5C91F462476ED7400A991B0 /* DeskViewController.swift in Sources */,
 				A5C91F012476D6AB00A991B0 /* AppDelegate.swift in Sources */,
@@ -361,6 +407,8 @@
 				A5C91F402476DA1000A991B0 /* StoryboardInstantiable.swift in Sources */,
 				A5B926B62477D801009D95F7 /* Chair.swift in Sources */,
 				A5C91F3C2476D98800A991B0 /* LoginViewController.swift in Sources */,
+				A5B926C824783365009D95F7 /* HTTPParameterEncoding.swift in Sources */,
+				A5B926C924783365009D95F7 /* HTTPStatusCode.swift in Sources */,
 				A5C91F032476D6AB00A991B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

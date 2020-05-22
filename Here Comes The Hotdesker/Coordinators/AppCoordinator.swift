@@ -40,6 +40,18 @@ class AppCoordinator {
 		// Window
 		window.rootViewController = loginNavigationController
 		window.makeKeyAndVisible()
+		
+		// Status
+		Client().getAllChairsStatuses { (result) in
+			switch result {
+			case .success(let data):
+				print(data)
+				break
+			case .error(let error):
+				print(error)
+				break
+			}
+		}
 	}
 	
 	func presentTable(from viewController: UIViewController, with user: User) {

@@ -80,7 +80,6 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	
 	func setVertical(label: UILabel, leadingConstraint: NSLayoutConstraint) {
 		label.transform = CGAffineTransform(rotationAngle: .pi/2*3)
-		// label.layer.frame = CGRect.init(x: label.layer.frame.origin.x, y: label.layer.frame.origin.y, width: label.layer.frame.width, height: 100.0)
 	}
 	
 	func setSpacing(_ stackView: UIStackView) {
