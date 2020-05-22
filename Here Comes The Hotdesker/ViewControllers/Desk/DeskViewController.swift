@@ -13,33 +13,20 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	// MARK: - Views
 	
 	@IBOutlet weak var labelSelect: UILabel!
-	@IBOutlet weak var buttonChair_1: UIButton!
-	@IBOutlet weak var buttonChair_2: UIButton!
-	@IBOutlet weak var buttonChair_3: UIButton!
-	@IBOutlet weak var buttonChair_4: UIButton!
-	@IBOutlet weak var buttonChair_5: UIButton!
-	@IBOutlet weak var buttonChair_6: UIButton!
-	@IBOutlet weak var buttonChair_7: UIButton!
-	@IBOutlet weak var buttonChair_8: UIButton!
-	@IBOutlet weak var buttonChair_9: UIButton!
-	@IBOutlet weak var buttonChair_10: UIButton!
+	@IBOutlet weak var buttonChair_1: UIButton! { didSet { if let image = viewModel?.desk.chairs[0].image { buttonChair_1.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_2: UIButton! { didSet { if let image = viewModel?.desk.chairs[1].image { buttonChair_2.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_3: UIButton! { didSet { if let image = viewModel?.desk.chairs[2].image { buttonChair_3.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_4: UIButton! { didSet { if let image = viewModel?.desk.chairs[3].image { buttonChair_4.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_5: UIButton! { didSet { if let image = viewModel?.desk.chairs[4].image { buttonChair_5.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_6: UIButton! { didSet { if let image = viewModel?.desk.chairs[5].image { buttonChair_6.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_7: UIButton! { didSet { if let image = viewModel?.desk.chairs[6].image { buttonChair_7.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_8: UIButton! { didSet { if let image = viewModel?.desk.chairs[7].image { buttonChair_8.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_9: UIButton! { didSet { if let image = viewModel?.desk.chairs[8].image { buttonChair_9.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_10: UIButton! { didSet { if let image = viewModel?.desk.chairs[9].image { buttonChair_10.setImage(image, for: .normal) } } }
 	
 	// MARK: - Properties
 	
-	let viewModel: DeskViewModel = DeskViewModel()
-	
-	var chair_1: String?
-	var chair_2: String?
-	var chair_3: String?
-	var chair_4: String?
-	var chair_5: String?
-	var chair_6: String?
-	var chair_7: String?
-	var chair_8: String?
-	var chair_9: String?
-	var chair_10: String?
-	 
-	var name: String = "Name"
+	var viewModel: DeskViewModel?
 	
 	// Actions
 	var dismiss: (() -> Void)?
@@ -56,48 +43,50 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		labelSelect.text = "Hey " + name + " select your seat!"
+		if let name = viewModel?.user.name {
+			labelSelect.text = "Hey " + name + " select your seat!"
+		}
 	}
 	
 	// MARK: - Actions
 	
 	@IBAction func actionButtonChair_1(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_1)
+		self.setChair(sender, 0)
 	}
 	@IBAction func actionButtonChair_2(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_2)
+		self.setChair(sender, 1)
 	}
 	@IBAction func actionButtonChair_3(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_3)
+		self.setChair(sender, 2)
 	}
 	@IBAction func actionButtonChair_4(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_4)
+		self.setChair(sender, 3)
 	}
 	@IBAction func actionButtonChair_5(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_5)
+		self.setChair(sender, 4)
 	}
 	@IBAction func actionButtonChair_6(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_6)
+		self.setChair(sender, 5)
 	}
 	@IBAction func actionButtonChair_7(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_7)
+		self.setChair(sender, 6)
 	}
 	@IBAction func actionButtonChair_8(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_8)
+		self.setChair(sender, 7)
 	}
 	@IBAction func actionButtonChair_9(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_9)
+		self.setChair(sender, 8)
 	}
 	@IBAction func actionButtonChair_10(_ sender: UIButton) {
-		self.setChair(sender, chair: chair_10)
+		self.setChair(sender, 9)
 	}
 	
-	func setChair(_ button: UIButton, chair: String?) {
-//		if (chair != nil) {
-//
-//		} else {
-			button.setImage(UIImage(named: "image_chair_busy_left"), for: .normal)
-//		}
+	func setChair(_ button: UIButton, _ index: Int) {
+		if let chair = viewModel?.setChair(index) {
+			button.setImage(chair.image, for: .normal)
+		} else {
+			print("error on setting the seat")
+		}
 	}
 	
 }

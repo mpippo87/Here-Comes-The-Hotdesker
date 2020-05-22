@@ -26,8 +26,8 @@ class AppCoordinator {
 		
 		// LoginViewController
 		let loginViewController = LoginViewController.istantiate()
-		loginViewController.findASeat = {
-			self.presentTable(from: loginViewController)
+		loginViewController.findASeat = { (user) in
+			self.presentTable(from: loginViewController, with: user)
 		}
 		
 		// NavigationController
@@ -42,8 +42,9 @@ class AppCoordinator {
 		window.makeKeyAndVisible()
 	}
 	
-	func presentTable(from viewController: UIViewController) {
+	func presentTable(from viewController: UIViewController, with user: User) {
 		let deskViewController = DeskViewController.istantiate()
+		deskViewController.viewModel = DeskViewModel(user: user)
 		
 		if let navigationController = window.rootViewController as? UINavigationController {
 			navigationController.pushViewController(deskViewController, animated: true)

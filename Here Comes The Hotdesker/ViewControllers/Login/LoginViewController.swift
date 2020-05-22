@@ -34,10 +34,10 @@ class LoginViewController: UIViewController, StoryboardInstantiable {
 	
 	// MARK: - Properties
 	
-	let viewModel: LoginViewModel = LoginViewModel()
+	var viewModel: LoginViewModel = LoginViewModel()
 	
 	// Actions
-	var findASeat: (() -> Void)?
+	var findASeat: ((User) -> Void)?
 	
 	// MARK: - StoryboardInstantiable
 	
@@ -61,10 +61,12 @@ class LoginViewController: UIViewController, StoryboardInstantiable {
 			return
 		}
 		
-		if let text = textFieldHotdesker.text, (text.isEmpty) {
-			labelError.isHidden = false
-		} else {
-			self.findASeat!()
+		if let text = textFieldHotdesker.text {
+			if (text.isEmpty) {
+				labelError.isHidden = false
+			} else {
+				self.findASeat!(User.init(name: text))
+			}
 		}
 	}
 	

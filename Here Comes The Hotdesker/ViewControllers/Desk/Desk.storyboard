@@ -27,28 +27,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="64D-IV-Rio">
                                         <rect key="frame" x="0.0" y="38.5" width="364" height="601"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTy-2f-udZ">
-                                                <rect key="frame" x="140" y="0.0" width="84" height="45"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-sS-pO8">
-                                                        <rect key="frame" x="19.5" y="0.0" width="45" height="45"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="45" id="0EW-Mb-WXI"/>
-                                                            <constraint firstAttribute="height" constant="45" id="NuJ-OS-ixu"/>
-                                                        </constraints>
-                                                        <state key="normal" image="image_chair_free_top"/>
-                                                        <connections>
-                                                            <action selector="actionButtonChair_1:" destination="EuP-bE-c1s" eventType="touchUpInside" id="VAu-hE-E3M"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-sS-pO8">
+                                                <rect key="frame" x="159.5" y="0.0" width="45" height="45"/>
                                                 <constraints>
-                                                    <constraint firstItem="ZzG-sS-pO8" firstAttribute="centerX" secondItem="NTy-2f-udZ" secondAttribute="centerX" id="7hV-pv-3Ao"/>
-                                                    <constraint firstAttribute="height" constant="45" id="nos-gb-GOs"/>
-                                                    <constraint firstItem="ZzG-sS-pO8" firstAttribute="centerY" secondItem="NTy-2f-udZ" secondAttribute="centerY" id="vIa-yN-c6P"/>
+                                                    <constraint firstAttribute="width" constant="45" id="0EW-Mb-WXI"/>
+                                                    <constraint firstAttribute="height" constant="45" id="NuJ-OS-ixu"/>
                                                 </constraints>
-                                            </view>
+                                                <state key="normal" image="image_chair_free_top"/>
+                                                <connections>
+                                                    <action selector="actionButtonChair_1:" destination="EuP-bE-c1s" eventType="touchUpInside" id="J0i-xG-wUy"/>
+                                                </connections>
+                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="lTH-Dp-PS5">
                                                 <rect key="frame" x="0.0" y="53" width="364" height="495"/>
                                                 <subviews>
@@ -164,28 +153,17 @@
                                                     <constraint firstAttribute="bottom" secondItem="EoC-Hc-1FH" secondAttribute="bottom" constant="16.5" id="HVl-kC-HMA"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TST-ja-0px">
-                                                <rect key="frame" x="140" y="556" width="84" height="45"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1S-b1-nWp">
-                                                        <rect key="frame" x="19.5" y="0.0" width="45" height="45"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="45" id="8PL-2l-Pny"/>
-                                                            <constraint firstAttribute="width" constant="45" id="rKd-qB-x3s"/>
-                                                        </constraints>
-                                                        <state key="normal" image="image_chair_free_bottom"/>
-                                                        <connections>
-                                                            <action selector="actionButtonChair_6:" destination="EuP-bE-c1s" eventType="touchUpInside" id="Mcs-DE-xnG"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1S-b1-nWp">
+                                                <rect key="frame" x="159.5" y="556" width="45" height="45"/>
                                                 <constraints>
-                                                    <constraint firstItem="d1S-b1-nWp" firstAttribute="centerY" secondItem="TST-ja-0px" secondAttribute="centerY" id="0fx-Jt-HdE"/>
-                                                    <constraint firstItem="d1S-b1-nWp" firstAttribute="centerX" secondItem="TST-ja-0px" secondAttribute="centerX" id="VfH-O7-RjV"/>
-                                                    <constraint firstAttribute="height" constant="45" id="dg8-n2-42H"/>
+                                                    <constraint firstAttribute="height" constant="45" id="8PL-2l-Pny"/>
+                                                    <constraint firstAttribute="width" constant="45" id="rKd-qB-x3s"/>
                                                 </constraints>
-                                            </view>
+                                                <state key="normal" image="image_chair_free_bottom"/>
+                                                <connections>
+                                                    <action selector="actionButtonChair_6:" destination="EuP-bE-c1s" eventType="touchUpInside" id="hch-KK-A5G"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
