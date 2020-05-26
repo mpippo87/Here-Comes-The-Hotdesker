@@ -23,7 +23,7 @@ class Network {
 	
 	// MARK: - Properties
 	
-	let host: String = "https://vapor-qrd.herokuapp.com"
+	let host: String = "https://host.aws.com"
 	private let urlSession = URLSession.shared
 	
 	// MARK: -  Public Methods

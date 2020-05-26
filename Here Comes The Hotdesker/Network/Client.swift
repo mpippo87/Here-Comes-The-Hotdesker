@@ -60,18 +60,16 @@ class ClientMock: ClientProtocolable {
 	// MARK: - Requests
 	
 	func getAllChairsStatuses(completion: @escaping (Result<Data, Error>) -> ()) {
-		let statuses = Statuses(statuses: [Status(chairId: 0, occupied: true, user: "User_1"),
-										   Status(chairId: 1, occupied: true, user: "User_2")])
+		let statuses = Statuses(statuses: [Status(chairId: 0, occupied: true, user: "Marzieh"),
+										   Status(chairId: 1, occupied: true, user: "Kay")])
 		do {
 			let jsonData = try JSONEncoder().encode(statuses)
-			// let data = try JSONSerialization.data(withJSONObject: statuses, options: .prettyPrinted)
 			completion(.success(jsonData))
 		} catch {
 			print(error)
 			completion(.error(error))
 		}
-		
-		
+				
 	}
 	
 	func postSetChair(indexChair: Int, user: User, completion: @escaping (Result<Data, Error>) -> ()) {
@@ -79,7 +77,7 @@ class ClientMock: ClientProtocolable {
 	}
 	
 	func getAllGroups(completion: @escaping (Result<Data, Error>) -> ()) {
-		completion(.error(error))
+		completion(.success(Data()))
 	}
 	
 }

@@ -53,6 +53,7 @@ final class DeskViewModel {
 			}
 			
 		} else if (index == indexChair) {
+			indexChair = nil
 			desk.seats[index].setFree()
 			
 			// TODO: Call to set free the seat

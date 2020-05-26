@@ -15,10 +15,8 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	@IBOutlet weak var labelSelect: UILabel!
 	
 	// StackViews
-	@IBOutlet weak var stackViewButtonRight: UIStackView! { didSet { setSpacing(stackViewButtonRight) } }
-	@IBOutlet weak var stackViewButtonLeft: UIStackView! { didSet { setSpacing(stackViewButtonLeft) } }
-	@IBOutlet weak var stackViewLabelRight: UIStackView! { didSet { setSpacing(stackViewLabelRight) } }
-	@IBOutlet weak var stackViewLabelLeft: UIStackView! { didSet { setSpacing(stackViewLabelLeft) } }
+	@IBOutlet weak var stackViewButtonLeft: UIStackView!
+	@IBOutlet weak var stackViewLabelRight: UIStackView!
 	
 	// Buttons
 	@IBOutlet weak var buttonChair_1: UIButton! { didSet { if let image = viewModel?.desk.seats[0].image { buttonChair_1.setImage(image, for: .normal) } } }
@@ -31,29 +29,20 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	@IBOutlet weak var buttonChair_8: UIButton! { didSet { if let image = viewModel?.desk.seats[7].image { buttonChair_8.setImage(image, for: .normal) } } }
 	@IBOutlet weak var buttonChair_9: UIButton! { didSet { if let image = viewModel?.desk.seats[8].image { buttonChair_9.setImage(image, for: .normal) } } }
 	@IBOutlet weak var buttonChair_10: UIButton! { didSet { if let image = viewModel?.desk.seats[9].image { buttonChair_10.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonSlack: UIButton!
 	
 	// Labels
-	@IBOutlet weak var labelChair_1: UILabel! { didSet { labelChair_1.text = "-" } }
-	@IBOutlet weak var labelChair_2: UILabel! { didSet { labelChair_2.text = "-" } }
-	@IBOutlet weak var labelChair_3: UILabel! { didSet { labelChair_3.text = "-" } }
-	@IBOutlet weak var labelChair_4: UILabel! { didSet { labelChair_4.text = "-" } }
-	@IBOutlet weak var labelChair_5: UILabel! { didSet { labelChair_5.text = "-" } }
-	@IBOutlet weak var labelChair_6: UILabel! { didSet { labelChair_6.text = "-" } }
-	@IBOutlet weak var labelChair_7: UILabel! { didSet { labelChair_7.text = "-" } }
-	@IBOutlet weak var labelChair_8: UILabel! { didSet { labelChair_8.text = "-" } }
-	@IBOutlet weak var labelChair_9: UILabel! { didSet { labelChair_9.text = "-" } }
-	@IBOutlet weak var labelChair_10: UILabel! { didSet { labelChair_10.text = "-" } }
+	@IBOutlet weak var labelChair_1: UILabel!
+	@IBOutlet weak var labelChair_2: UILabel!
+	@IBOutlet weak var labelChair_3: UILabel!
+	@IBOutlet weak var labelChair_4: UILabel!
+	@IBOutlet weak var labelChair_5: UILabel!
+	@IBOutlet weak var labelChair_6: UILabel!
+	@IBOutlet weak var labelChair_7: UILabel!
+	@IBOutlet weak var labelChair_8: UILabel!
+	@IBOutlet weak var labelChair_9: UILabel!
+	@IBOutlet weak var labelChair_10: UILabel!
 	
-	// Constraints
-	@IBOutlet weak var leadingConstraint_2: NSLayoutConstraint! { didSet { setVertical(label: labelChair_2, leadingConstraint: leadingConstraint_2) } }
-	@IBOutlet weak var leadingConstraint_3: NSLayoutConstraint! { didSet { setVertical(label: labelChair_3, leadingConstraint: leadingConstraint_3) } }
-	@IBOutlet weak var leadingConstraint_4: NSLayoutConstraint! { didSet { setVertical(label: labelChair_4, leadingConstraint: leadingConstraint_4) } }
-	@IBOutlet weak var leadingConstraint_5: NSLayoutConstraint! { didSet { setVertical(label: labelChair_5, leadingConstraint: leadingConstraint_5) } }
-	@IBOutlet weak var leadingConstraint_7: NSLayoutConstraint! { didSet { setVertical(label: labelChair_7, leadingConstraint: leadingConstraint_7) } }
-	@IBOutlet weak var leadingConstraint_8: NSLayoutConstraint! { didSet { setVertical(label: labelChair_8, leadingConstraint: leadingConstraint_8) } }
-	@IBOutlet weak var leadingConstraint_9: NSLayoutConstraint! { didSet { setVertical(label: labelChair_9, leadingConstraint: leadingConstraint_9) } }
-	@IBOutlet weak var leadingConstraint_10: NSLayoutConstraint! { didSet { setVertical(label: labelChair_10, leadingConstraint: leadingConstraint_10) } }
-		
 	// MARK: - Properties
 	
 	var viewModel: DeskViewModel?
@@ -74,18 +63,13 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 		super.viewDidLoad()
 		
 		if let name = viewModel?.user.name {
-			labelSelect.text = "Hey " + name + " select your seat!"
+			labelSelect.text = "Hey " + name.uppercased() + " select your seat!"
 		}
 		
 		if let chairs = viewModel?.desk.seats {
 			setChairs(seats: chairs)
 		}
 		
-	}
-	
-	func setVertical(label: UILabel, leadingConstraint: NSLayoutConstraint) {
-		label.transform = CGAffineTransform(rotationAngle: .pi/2*3)
-		label.sizeToFit()
 	}
 	
 	func setSpacing(_ stackView: UIStackView) {
@@ -146,6 +130,8 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 				break
 			}
 		}
+	
+		buttonSlack.isHidden = ((viewModel?.indexChair) != nil) ? false : true
 	}
 	
 	// MARK: - Actions
@@ -184,6 +170,12 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	func setChair(_ button: UIButton, _ label: UILabel, _ index: Int) {
 		if let seats = viewModel?.setChair(index) {
 			setChairs(seats: seats)
+		}
+	}
+	
+	@IBAction func actionButtonSlack(_ sender: UIButton) {
+		if let url = URL(string: "slack://open?") {
+			UIApplication.shared.open(url, options: [:], completionHandler: nil)
 		}
 	}
 	
