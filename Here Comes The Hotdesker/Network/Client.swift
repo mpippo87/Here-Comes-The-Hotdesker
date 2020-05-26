@@ -8,7 +8,13 @@
 
 import Foundation
 
-class Client {
+protocol ClientProtocolable {
+	func getAllChairsStatuses(completion: @escaping (Result<Data, Error>) -> ())
+	func postSetChair(indexChair: Int, user: User, completion: @escaping (Result<Data, Error>) -> ())
+	func getAllGroups(completion: @escaping (Result<Data, Error>) -> ())
+}
+
+class Client: ClientProtocolable {
 	
 	// MARK: - Properties
 	
@@ -41,6 +47,39 @@ class Client {
 		}
 		
 		network.get(url: url, completion: completion)
+	}
+	
+}
+
+class ClientMock: ClientProtocolable {
+	
+	// MARK: - Properties
+	
+	private let network = Network()
+	
+	// MARK: - Requests
+	
+	func getAllChairsStatuses(completion: @escaping (Result<Data, Error>) -> ()) {
+		let statuses = Statuses(statuses: [Status(chairId: 0, occupied: true, user: "User_1"),
+										   Status(chairId: 1, occupied: true, user: "User_2")])
+		do {
+			let jsonData = try JSONEncoder().encode(statuses)
+			// let data = try JSONSerialization.data(withJSONObject: statuses, options: .prettyPrinted)
+			completion(.success(jsonData))
+		} catch {
+			print(error)
+			completion(.error(error))
+		}
+		
+		
+	}
+	
+	func postSetChair(indexChair: Int, user: User, completion: @escaping (Result<Data, Error>) -> ()) {
+		completion(.success(Data()))
+	}
+	
+	func getAllGroups(completion: @escaping (Result<Data, Error>) -> ()) {
+		completion(.error(error))
 	}
 	
 }

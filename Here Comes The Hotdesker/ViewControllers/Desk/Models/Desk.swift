@@ -1,5 +1,5 @@
 //
-//  Table.swift
+//  Desk.swift
 //  Here Comes The Hotdesker
 //
 //  Created by Filippo Minelle on 22/05/2020.
@@ -12,7 +12,7 @@ class Desk {
 	
 	// MARK: - Properties
 	
-	var chairs: [Chair] = [Chair]()
+	var seats: [Seat] = [Seat]()
 	
 }
 
@@ -20,21 +20,21 @@ final class Desk_10: Desk {
 	
 	override init() {
 		super.init()
-		chairs = [Chair](repeating: Chair(kind: Chair.Kind.top, state: Chair.State.free, user: nil), count: 10)
+		seats = [Seat](repeating: Seat(kind: Seat.Kind.top, state: Seat.State.free, user: nil), count: 10)
 		
-		chairs[1].kind = .top
+		seats[1].kind = .top
 		
-		chairs[1].kind = .right
-		chairs[2].kind = .right
-		chairs[3].kind = .right
-		chairs[4].kind = .right
+		seats[1].kind = .right
+		seats[2].kind = .right
+		seats[3].kind = .right
+		seats[4].kind = .right
 		
-		chairs[5].kind = .bottom
+		seats[5].kind = .bottom
 		
-		chairs[6].kind = .left
-		chairs[7].kind = .left
-		chairs[8].kind = .left
-		chairs[9].kind = .left
+		seats[6].kind = .left
+		seats[7].kind = .left
+		seats[8].kind = .left
+		seats[9].kind = .left
 	}
 	
 }

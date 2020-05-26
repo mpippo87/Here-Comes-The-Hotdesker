@@ -40,26 +40,43 @@ class AppCoordinator {
 		// Window
 		window.rootViewController = loginNavigationController
 		window.makeKeyAndVisible()
+	}
+	
+	func presentTable(from viewController: UIViewController, with user: User) {
+		let deskViewController = DeskViewController.istantiate()
 		
-		// Status
-		Client().getAllChairsStatuses { (result) in
+		var client: ClientProtocolable
+		#if DEBUG
+		client = ClientMock()
+		#else
+		client = Client()
+		#endif
+		
+		client.getAllChairsStatuses { (result) in
 			switch result {
 			case .success(let data):
-				print(data)
-				break
+				do {
+					let statuses: Statuses = try JSONDecoder().decode(Statuses.self, from: data)
+					
+					let desk = Desk_10()
+					statuses.statuses.forEach { (status) in
+						desk.seats[status.chairId].setBusy(User.init(name: status.user))
+					}
+					
+					deskViewController.viewModel = DeskViewModel(user: user, desk: desk)
+					if let navigationController = self.window.rootViewController as? UINavigationController {
+						navigationController.pushViewController(deskViewController, animated: true)
+					}
+				} catch  {
+					print("§ error: \(error)")
+				}
+				
 			case .error(let error):
 				print(error)
 				break
 			}
 		}
+		
 	}
 	
-	func presentTable(from viewController: UIViewController, with user: User) {
-		let deskViewController = DeskViewController.istantiate()
-		deskViewController.viewModel = DeskViewModel(user: user)
-		
-		if let navigationController = window.rootViewController as? UINavigationController {
-			navigationController.pushViewController(deskViewController, animated: true)
-		}
-	}
 }

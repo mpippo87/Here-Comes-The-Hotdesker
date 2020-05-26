@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Here Comes The Hotdesker.xcscheme_^#shared#^_</key>
+		<key>HCTH (Development).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>HCTH.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A5C91EFC2476D6AB00A991B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5C91F152476D6AD00A991B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5C91F202476D6AD00A991B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

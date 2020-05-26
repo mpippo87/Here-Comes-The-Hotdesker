@@ -1,5 +1,5 @@
 //
-//  Chair.swift
+//  Seat.swift
 //  Here Comes The Hotdesker
 //
 //  Created by Filippo Minelle on 22/05/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Chair {
+struct Seat {
 	
 	// MARK: - Types
 	

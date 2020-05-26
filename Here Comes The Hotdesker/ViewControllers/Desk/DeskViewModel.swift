@@ -13,36 +13,52 @@ final class DeskViewModel {
 	// MARK: - Properties
 	
 	/// Desk
-	var desk: Desk = Desk_10()
-	
+	var desk: Desk
 	/// Current user
 	var user: User
 	var indexChair: Int?
 	
 	// MARK: - Init
 	
-	init(user: User) {
+	init(user: User, desk: Desk = Desk_10()) {
 		self.user = user
+		self.desk = desk
 	}
 	
 	// MARK: - Public Methods
 	
-	func setChair(_ index: Int) -> [Chair] {
-		if (desk.chairs[index].state != .busy) {
+	func setChair(_ index: Int) -> [Seat] {
+		if (desk.seats[index].state != .busy) {
 			
-			// TODO: Call Server
+			var client: ClientProtocolable
+			#if DEBUG
+			client = ClientMock()
+			#else
+			client = Client()
+			#endif
 			
-			if let currentIndex = indexChair {
-				desk.chairs[currentIndex].setFree()
+			client.postSetChair(indexChair: index, user: user) { (result) in
+				switch result {
+				case .success(_):
+					if let currentIndex = self.indexChair {
+						self.desk.seats[currentIndex].setFree()
+					}
+					self.desk.seats[index].setBusy(self.user)
+					self.indexChair = index
+					
+				case . error(let error):
+					print(error)
+					break
+				}
 			}
-			desk.chairs[index].setBusy(user)
-			indexChair = index
 			
 		} else if (index == indexChair) {
-			desk.chairs[index].setFree()
+			desk.seats[index].setFree()
+			
+			// TODO: Call to set free the seat
 		}
 		
-		return desk.chairs
+		return desk.seats
 	}
 	
 }

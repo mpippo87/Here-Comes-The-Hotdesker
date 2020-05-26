@@ -21,28 +21,28 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	@IBOutlet weak var stackViewLabelLeft: UIStackView! { didSet { setSpacing(stackViewLabelLeft) } }
 	
 	// Buttons
-	@IBOutlet weak var buttonChair_1: UIButton! { didSet { if let image = viewModel?.desk.chairs[0].image { buttonChair_1.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_2: UIButton! { didSet { if let image = viewModel?.desk.chairs[1].image { buttonChair_2.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_3: UIButton! { didSet { if let image = viewModel?.desk.chairs[2].image { buttonChair_3.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_4: UIButton! { didSet { if let image = viewModel?.desk.chairs[3].image { buttonChair_4.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_5: UIButton! { didSet { if let image = viewModel?.desk.chairs[4].image { buttonChair_5.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_6: UIButton! { didSet { if let image = viewModel?.desk.chairs[5].image { buttonChair_6.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_7: UIButton! { didSet { if let image = viewModel?.desk.chairs[6].image { buttonChair_7.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_8: UIButton! { didSet { if let image = viewModel?.desk.chairs[7].image { buttonChair_8.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_9: UIButton! { didSet { if let image = viewModel?.desk.chairs[8].image { buttonChair_9.setImage(image, for: .normal) } } }
-	@IBOutlet weak var buttonChair_10: UIButton! { didSet { if let image = viewModel?.desk.chairs[9].image { buttonChair_10.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_1: UIButton! { didSet { if let image = viewModel?.desk.seats[0].image { buttonChair_1.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_2: UIButton! { didSet { if let image = viewModel?.desk.seats[1].image { buttonChair_2.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_3: UIButton! { didSet { if let image = viewModel?.desk.seats[2].image { buttonChair_3.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_4: UIButton! { didSet { if let image = viewModel?.desk.seats[3].image { buttonChair_4.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_5: UIButton! { didSet { if let image = viewModel?.desk.seats[4].image { buttonChair_5.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_6: UIButton! { didSet { if let image = viewModel?.desk.seats[5].image { buttonChair_6.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_7: UIButton! { didSet { if let image = viewModel?.desk.seats[6].image { buttonChair_7.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_8: UIButton! { didSet { if let image = viewModel?.desk.seats[7].image { buttonChair_8.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_9: UIButton! { didSet { if let image = viewModel?.desk.seats[8].image { buttonChair_9.setImage(image, for: .normal) } } }
+	@IBOutlet weak var buttonChair_10: UIButton! { didSet { if let image = viewModel?.desk.seats[9].image { buttonChair_10.setImage(image, for: .normal) } } }
 	
 	// Labels
-	@IBOutlet weak var labelChair_1: UILabel!
-	@IBOutlet weak var labelChair_2: UILabel!
-	@IBOutlet weak var labelChair_3: UILabel!
-	@IBOutlet weak var labelChair_4: UILabel!
-	@IBOutlet weak var labelChair_5: UILabel!
-	@IBOutlet weak var labelChair_6: UILabel!
-	@IBOutlet weak var labelChair_7: UILabel!
-	@IBOutlet weak var labelChair_8: UILabel!
-	@IBOutlet weak var labelChair_9: UILabel!
-	@IBOutlet weak var labelChair_10: UILabel!
+	@IBOutlet weak var labelChair_1: UILabel! { didSet { labelChair_1.text = "-" } }
+	@IBOutlet weak var labelChair_2: UILabel! { didSet { labelChair_2.text = "-" } }
+	@IBOutlet weak var labelChair_3: UILabel! { didSet { labelChair_3.text = "-" } }
+	@IBOutlet weak var labelChair_4: UILabel! { didSet { labelChair_4.text = "-" } }
+	@IBOutlet weak var labelChair_5: UILabel! { didSet { labelChair_5.text = "-" } }
+	@IBOutlet weak var labelChair_6: UILabel! { didSet { labelChair_6.text = "-" } }
+	@IBOutlet weak var labelChair_7: UILabel! { didSet { labelChair_7.text = "-" } }
+	@IBOutlet weak var labelChair_8: UILabel! { didSet { labelChair_8.text = "-" } }
+	@IBOutlet weak var labelChair_9: UILabel! { didSet { labelChair_9.text = "-" } }
+	@IBOutlet weak var labelChair_10: UILabel! { didSet { labelChair_10.text = "-" } }
 	
 	// Constraints
 	@IBOutlet weak var leadingConstraint_2: NSLayoutConstraint! { didSet { setVertical(label: labelChair_2, leadingConstraint: leadingConstraint_2) } }
@@ -76,10 +76,16 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 		if let name = viewModel?.user.name {
 			labelSelect.text = "Hey " + name + " select your seat!"
 		}
+		
+		if let chairs = viewModel?.desk.seats {
+			setChairs(seats: chairs)
+		}
+		
 	}
 	
 	func setVertical(label: UILabel, leadingConstraint: NSLayoutConstraint) {
 		label.transform = CGAffineTransform(rotationAngle: .pi/2*3)
+		label.sizeToFit()
 	}
 	
 	func setSpacing(_ stackView: UIStackView) {
@@ -97,6 +103,45 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 				stackView.spacing = 95.0
 			case 1792:
 				stackView.spacing = 90.0
+			default:
+				break
+			}
+		}
+	}
+	
+	func setChairs(seats: [Seat]) {
+		for (index, seat) in seats.enumerated() {
+			switch index {
+			case 0:
+				buttonChair_1.setImage(seat.image, for: .normal)
+				labelChair_1.text = seat.user?.name ?? "-"
+			case 1:
+				buttonChair_2.setImage(seat.image, for: .normal)
+				labelChair_2.text = seat.user?.name ?? "-"
+			case 2:
+				buttonChair_3.setImage(seat.image, for: .normal)
+				labelChair_3.text = seat.user?.name ?? "-"
+			case 3:
+				buttonChair_4.setImage(seat.image, for: .normal)
+				labelChair_4.text = seat.user?.name ?? "-"
+			case 4:
+				buttonChair_5.setImage(seat.image, for: .normal)
+				labelChair_5.text = seat.user?.name ?? "-"
+			case 5:
+				buttonChair_6.setImage(seat.image, for: .normal)
+				labelChair_6.text = seat.user?.name ?? "-"
+			case 6:
+				buttonChair_7.setImage(seat.image, for: .normal)
+				labelChair_7.text = seat.user?.name ?? "-"
+			case 7:
+				buttonChair_8.setImage(seat.image, for: .normal)
+				labelChair_8.text = seat.user?.name ?? "-"
+			case 8:
+				buttonChair_9.setImage(seat.image, for: .normal)
+				labelChair_9.text = seat.user?.name ?? "-"
+			case 9:
+				buttonChair_10.setImage(seat.image, for: .normal)
+				labelChair_10.text = seat.user?.name ?? "-"
 			default:
 				break
 			}
@@ -138,45 +183,7 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	
 	func setChair(_ button: UIButton, _ label: UILabel, _ index: Int) {
 		if let seats = viewModel?.setChair(index) {
-			for (index, seat) in seats.enumerated() {
-				switch index {
-				case 0:
-					buttonChair_1.setImage(seat.image, for: .normal)
-					labelChair_1.text = seat.user?.name ?? "free"
-				case 1:
-					buttonChair_2.setImage(seat.image, for: .normal)
-					labelChair_2.text = seat.user?.name ?? "free"
-				case 2:
-					buttonChair_3.setImage(seat.image, for: .normal)
-					labelChair_3.text = seat.user?.name ?? "free"
-				case 3:
-					buttonChair_4.setImage(seat.image, for: .normal)
-					labelChair_4.text = seat.user?.name ?? "free"
-				case 4:
-					buttonChair_5.setImage(seat.image, for: .normal)
-					labelChair_5.text = seat.user?.name ?? "free"
-				case 5:
-					buttonChair_6.setImage(seat.image, for: .normal)
-					labelChair_6.text = seat.user?.name ?? "free"
-				case 6:
-					buttonChair_7.setImage(seat.image, for: .normal)
-					labelChair_7.text = seat.user?.name ?? "free"
-				case 7:
-					buttonChair_8.setImage(seat.image, for: .normal)
-					labelChair_8.text = seat.user?.name ?? "free"
-				case 8:
-					buttonChair_9.setImage(seat.image, for: .normal)
-					labelChair_9.text = seat.user?.name ?? "free"
-				case 9:
-					buttonChair_10.setImage(seat.image, for: .normal)
-					labelChair_10.text = seat.user?.name ?? "free"
-				default:
-					break
-				}
-				
-				
-				
-			}
+			setChairs(seats: seats)
 		}
 	}
 	
