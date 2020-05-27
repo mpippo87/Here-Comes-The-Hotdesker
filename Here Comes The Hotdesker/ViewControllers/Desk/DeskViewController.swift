@@ -130,7 +130,7 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 				break
 			}
 		}
-	
+		
 		buttonSlack.isHidden = ((viewModel?.indexChair) != nil) ? false : true
 	}
 	
@@ -174,7 +174,7 @@ class DeskViewController: UIViewController, StoryboardInstantiable {
 	}
 	
 	@IBAction func actionButtonSlack(_ sender: UIButton) {
-		if let url = URL(string: "slack://open?") {
+		if let url = URL(string: "https://app.slack.com/client/T1V5C9JBG/G014Q1ZHT0R") {
 			UIApplication.shared.open(url, options: [:], completionHandler: nil)
 		}
 	}

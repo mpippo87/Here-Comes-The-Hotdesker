@@ -60,16 +60,15 @@ class ClientMock: ClientProtocolable {
 	// MARK: - Requests
 	
 	func getAllChairsStatuses(completion: @escaping (Result<Data, Error>) -> ()) {
-		let statuses = Statuses(statuses: [Status(chairId: 0, occupied: true, user: "Marzieh"),
-										   Status(chairId: 1, occupied: true, user: "Kay")])
+		let statuses = Statuses(statuses: [Status(chairId: 0, occupied: true, user: "Matt"),
+										   Status(chairId: 1, occupied: true, user: "James")])
 		do {
 			let jsonData = try JSONEncoder().encode(statuses)
 			completion(.success(jsonData))
 		} catch {
 			print(error)
 			completion(.error(error))
-		}
-				
+		}		
 	}
 	
 	func postSetChair(indexChair: Int, user: User, completion: @escaping (Result<Data, Error>) -> ()) {
